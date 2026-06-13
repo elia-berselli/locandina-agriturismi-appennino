@@ -368,64 +368,6 @@
     background: var(--ink); color: var(--bg);
     display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--gap-6);
   }
-
-  /* ============================================================
-     SECTION: Condividi
-     ============================================================ */
-  .share {
-    padding: var(--gap-7) var(--gap-6) var(--gap-6);
-    background: var(--bg);
-  }
-  .share-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--gap-4);
-    margin-top: var(--gap-5);
-  }
-  .share-card {
-    background: var(--paper);
-    border: 1px solid var(--line-soft);
-    border-radius: var(--r-l);
-    padding: var(--gap-4);
-    display: flex; flex-direction: column; gap: var(--gap-2);
-    position: relative;
-  }
-  .share-num {
-    width: 36px; height: 36px;
-    display: inline-flex; align-items: center; justify-content: center;
-    background: var(--mustard); color: var(--ink);
-    border-radius: 50%;
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: 16px;
-    margin-bottom: 4px;
-  }
-  .share-card h3 {
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px;
-    margin: 0; line-height: 1.2;
-  }
-  .share-card p {
-    font-size: 13px; line-height: 1.55; color: var(--ink-soft); margin: 0;
-  }
-  .share-card p code, .share-card kbd {
-    background: var(--bg-deep);
-    padding: 1px 6px; border-radius: 4px;
-    font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 11.5px;
-    color: var(--ink); border: 1px solid var(--line-soft);
-  }
-  .share-card .hint {
-    margin-top: var(--gap-2);
-    padding-top: var(--gap-2);
-    border-top: 1px dashed var(--line-soft);
-    font-size: 11.5px; color: var(--ink-soft);
-  }
-  .share-note {
-    margin-top: var(--gap-5);
-    padding: var(--gap-4);
-    background: var(--ink);
-    color: var(--bg);
-    border-radius: var(--r-l);
-    font-size: 14px; line-height: 1.6;
-  }
-  .share-note strong { color: var(--mustard); }
   .foot h3 {
     font-family: 'Fraunces', serif; font-weight: 700;
     font-size: 22px; margin: 0 0 var(--gap-3);
@@ -940,46 +882,6 @@
         </tr>
       </tbody>
     </table>
-  </section>
-
-  <!-- ============================================================
-       SEZIONE: Come condividere
-       ============================================================ -->
-  <section class="share">
-    <div class="sec-head">
-      <div>
-        <div class="kicker">Condividi la locandina</div>
-        <h2>3 modi per portarla con te</h2>
-      </div>
-      <p>La locandina è un singolo file HTML con la cartella <code>assets/</code>: le immagini sono già incorporate, non serve connessione per vederle.</p>
-    </div>
-
-    <div class="share-grid">
-      <div class="share-card">
-        <div class="share-num">A</div>
-        <h3>PDF per stampa o WhatsApp</h3>
-        <p>Apri <code>locandina.html</code> in Chrome/Edge → <kbd>Ctrl</kbd>+<kbd>P</kbd> → salva come PDF. Le immagini sono già incorporate, il file è pronto da inviare.</p>
-        <p class="hint">✅ Funziona offline · ✅ Ricevente non deve avere la cartella assets</p>
-      </div>
-      <div class="share-card">
-        <div class="share-num">B</div>
-        <h3>Google Drive (consigliato)</h3>
-        <p>Comprimi <code>locandina-agriturismi/</code> in un .zip, caricalo su Drive, poi converti in cartella condivisa. Chi apre <code>locandina.html</code> dal proprio Drive vedrà foto + link cliccabili.</p>
-        <p class="hint">✅ Foto visibili · ✅ Link funzionanti · ⚠️ Richiede Drive Desktop o download+apertura locale</p>
-      </div>
-      <div class="share-card">
-        <div class="share-num">C</div>
-        <h3>Hosting gratuito online</h3>
-        <p>Carica la cartella su <strong>Netlify Drop</strong> (drop.netlify.com), <strong>Vercel</strong>, o <strong>GitHub Pages</strong>: ti danno un link HTTPS condivisibile. Le immagini restano online e i link restano cliccabili da chiunque.</p>
-        <p class="hint">✅ Chiunque apre un link · ✅ Foto + link funzionanti · ⚠️ Serve upload iniziale</p>
-      </div>
-    </div>
-
-    <div class="share-note">
-      <strong>💡 Consiglio pratico:</strong> per la condivisione con amici, la via più rapida è
-      <strong>opzione B + anteprima PDF</strong>: zip + Drive + una foto PDF della locandina allegata su WhatsApp/Telegram,
-      così tutti vedono subito l'anteprima e chi vuole può aprire la versione interattiva.
-    </div>
   </section>
 
   <!-- ============================================================
