@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1200" />
+<title>10 Agriturismi sull'Appennino Bolognese · Locandina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     Design tokens — Rustico/Moderno Appennino
+     ============================================================ */
+  :root {
+    /* Palette: marrone caldo, beige carta, verde salvia, senape */
+    --bg:           #F4EFE6;  /* beige carta */
+    --bg-deep:      #E8DFCF;  /* beige più carico per sezioni alterne */
+    --ink:          #2A2018;  /* marrone scuro, quasi nero */
+    --ink-soft:     #5C4A3B;  /* marrone medio per testi secondari */
+    --line:         #C8B89C;  /* bordi caldi */
+    --line-soft:    #DDD0B8;
+    --accent:       #6B7A3A;  /* verde salvia */
+    --accent-deep:  #4F5C28;
+    --mustard:      #C89B3C;  /* senape */
+    --rust:         #B45A3A;  /* mattone appenninico */
+    --paper:        #FBF7EE;  /* bianco sporco per card */
+    --shadow:       0 1px 0 rgba(42,32,24,.06), 0 8px 24px -16px rgba(42,32,24,.18);
+
+    /* Spacing */
+    --gap-1:  4px;
+    --gap-2:  8px;
+    --gap-3: 12px;
+    --gap-4: 16px;
+    --gap-5: 24px;
+    --gap-6: 32px;
+    --gap-7: 48px;
+    --gap-8: 64px;
+
+    /* Radius */
+    --r-s:  6px;
+    --r-m: 10px;
+    --r-l: 16px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0; padding: 0;
+    background: #DAD2BF;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page {
+    width: 1200px;
+    margin: 0 auto;
+    background: var(--bg);
+    box-shadow: 0 0 60px rgba(0,0,0,.12);
+  }
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+  .hero {
+    padding: var(--gap-7) var(--gap-6) var(--gap-6);
+    background:
+      radial-gradient(1100px 380px at 85% 20%, rgba(107,122,58,.10), transparent 60%),
+      radial-gradient(900px 360px at 12% 90%, rgba(200,155,60,.10), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--line-soft);
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: var(--gap-2);
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-deep); font-weight: 600;
+    padding: 6px 12px; border: 1px solid var(--accent); border-radius: 999px;
+    background: rgba(107,122,58,.08);
+  }
+  .hero-eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', 'Georgia', serif;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 1.02;
+    letter-spacing: -.02em;
+    margin: var(--gap-4) 0 var(--gap-3);
+    color: var(--ink);
+    max-width: 900px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--accent-deep);
+  }
+  .hero-sub {
+    font-size: 18px; line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0 0 var(--gap-5);
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: var(--gap-4);
+    border-top: 1px dashed var(--line);
+    padding-top: var(--gap-4);
+    margin-top: var(--gap-5);
+  }
+  .hero-meta .item {
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .hero-meta .label {
+    font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .hero-meta .value {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; color: var(--ink);
+  }
+
+  /* ============================================================
+     SECTION: Cards per location
+     ============================================================ */
+  .cards {
+    padding: var(--gap-7) var(--gap-6) var(--gap-6);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-6);
+  }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--r-l);
+    padding: var(--gap-4);
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: var(--gap-3);
+  }
+  .card-num {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: 14px; color: var(--ink-soft);
+    letter-spacing: .04em;
+  }
+  .card-num .n {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--ink); color: var(--paper);
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px;
+  }
+  .card h2 {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px;
+    line-height: 1.15; letter-spacing: -.01em; margin: 0;
+    color: var(--ink);
+  }
+  .card .where {
+    font-size: 13px; color: var(--ink-soft);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .card .where::before {
+    content: ""; width: 4px; height: 4px; background: var(--mustard);
+    border-radius: 50%;
+  }
+  .card .desc {
+    font-size: 14px; line-height: 1.55; color: var(--ink-soft);
+    margin: 0;
+  }
+  .photos {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+    aspect-ratio: 16/9;
+    border-radius: var(--r-m);
+    overflow: hidden;
+    border: 1px solid var(--line-soft);
+  }
+  .photos img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    background: var(--bg-deep);
+  }
+  /* Il primo photo è grande, occupa 2 righe */
+  .photos img:nth-child(1) {
+    grid-row: span 2;
+  }
+  /* Caption overlay */
+  .card-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .tag {
+    font-size: 11px; padding: 4px 8px; border-radius: 999px;
+    background: var(--bg-deep);
+    color: var(--ink-soft);
+    border: 1px solid var(--line-soft);
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+  .tag.alt {
+    background: rgba(107,122,58,.10);
+    color: var(--accent-deep);
+    border-color: rgba(107,122,58,.25);
+  }
+  .tag.warm {
+    background: rgba(200,155,60,.12);
+    color: #8A6A22;
+    border-color: rgba(200,155,60,.30);
+  }
+  .tag.rust {
+    background: rgba(180,90,58,.10);
+    color: #8A4029;
+    border-color: rgba(180,90,58,.25);
+  }
+
+  /* Card meta row */
+  .card-foot {
+    display: flex; flex-wrap: wrap; gap: var(--gap-3) var(--gap-5);
+    padding-top: var(--gap-3);
+    border-top: 1px dashed var(--line-soft);
+    font-size: 12px; color: var(--ink-soft);
+  }
+  .card-foot .stat {
+    display: flex; align-items: center; gap: 6px;
+  }
+  .card-foot .stat b {
+    color: var(--ink); font-weight: 600;
+  }
+
+  /* Card actions: link cliccabili */
+  .card-actions {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding-top: var(--gap-2);
+  }
+  .act {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    border-radius: var(--r-s);
+    text-decoration: none;
+    transition: background .12s, border-color .12s, transform .08s;
+  }
+  .act:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .act:active { transform: translateY(1px); }
+  .act svg {
+    width: 13px; height: 13px; stroke-width: 2; flex-shrink: 0;
+  }
+  .act.primary {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .act.primary:hover {
+    background: var(--accent-deep);
+    border-color: var(--accent-deep);
+  }
+  .act .lbl { line-height: 1; }
+
+  /* Print: hide actions */
+  @media print {
+    .card-actions, .no-print { display: none !important; }
+  }
+
+  /* ============================================================
+     SECTION: Tabella riassuntiva
+     ============================================================ */
+  .table-section {
+    padding: var(--gap-7) var(--gap-6) var(--gap-6);
+    background: var(--bg-deep);
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .sec-head {
+    display: flex; align-items: end; justify-content: space-between;
+    margin-bottom: var(--gap-5);
+    padding-bottom: var(--gap-4);
+    border-bottom: 1px solid var(--line);
+  }
+  .sec-head h2 {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: 36px; margin: 0; letter-spacing: -.01em;
+  }
+  .sec-head .kicker {
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-deep); font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .sec-head p {
+    color: var(--ink-soft); font-size: 14px; margin: 0; max-width: 460px;
+  }
+  table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    font-size: 13px;
+    background: var(--paper);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--r-l);
+    overflow: hidden;
+  }
+  thead th {
+    text-align: left; padding: 14px 12px;
+    background: var(--ink); color: var(--paper);
+    font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+    font-weight: 600;
+  }
+  thead th:first-child { padding-left: 18px; }
+  thead th:last-child  { padding-right: 18px; text-align: center; }
+  tbody td {
+    padding: 14px 12px;
+    border-top: 1px solid var(--line-soft);
+    vertical-align: top;
+  }
+  tbody td:first-child { padding-left: 18px; }
+  tbody td:last-child  { padding-right: 18px; text-align: center; }
+  tbody tr:nth-child(odd) td { background: rgba(244,239,230,.45); }
+  .name-cell strong {
+    display: block; font-family: 'Fraunces', serif;
+    font-size: 15px; font-weight: 700; color: var(--ink);
+    line-height: 1.2;
+  }
+  .name-cell span {
+    color: var(--ink-soft); font-size: 12px; font-weight: 400;
+  }
+  .rating {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--ink); color: var(--paper);
+    padding: 3px 8px; border-radius: 999px;
+    font-weight: 600; font-size: 12px;
+  }
+  .rating::before { content: "★"; color: var(--mustard); }
+  .alt-cell {
+    display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;
+  }
+  .mini-tag {
+    font-size: 10.5px; padding: 3px 7px; border-radius: 999px;
+    background: var(--bg-deep); color: var(--ink-soft);
+    border: 1px solid var(--line-soft);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .mini-tag.alt {
+    background: rgba(107,122,58,.10);
+    color: var(--accent-deep);
+    border-color: rgba(107,122,58,.25);
+  }
+  .mini-tag.warm {
+    background: rgba(200,155,60,.12);
+    color: #8A6A22;
+    border-color: rgba(200,155,60,.30);
+  }
+  .alt-tag {
+    display: inline-block;
+    font-size: 10.5px; padding: 3px 7px; border-radius: 6px;
+    background: var(--accent); color: var(--paper);
+    font-weight: 600;
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .foot {
+    padding: var(--gap-6) var(--gap-6) var(--gap-7);
+    background: var(--ink); color: var(--bg);
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--gap-6);
+  }
+
+  /* ============================================================
+     SECTION: Condividi
+     ============================================================ */
+  .share {
+    padding: var(--gap-7) var(--gap-6) var(--gap-6);
+    background: var(--bg);
+  }
+  .share-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-4);
+    margin-top: var(--gap-5);
+  }
+  .share-card {
+    background: var(--paper);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--r-l);
+    padding: var(--gap-4);
+    display: flex; flex-direction: column; gap: var(--gap-2);
+    position: relative;
+  }
+  .share-num {
+    width: 36px; height: 36px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--mustard); color: var(--ink);
+    border-radius: 50%;
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .share-card h3 {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px;
+    margin: 0; line-height: 1.2;
+  }
+  .share-card p {
+    font-size: 13px; line-height: 1.55; color: var(--ink-soft); margin: 0;
+  }
+  .share-card p code, .share-card kbd {
+    background: var(--bg-deep);
+    padding: 1px 6px; border-radius: 4px;
+    font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 11.5px;
+    color: var(--ink); border: 1px solid var(--line-soft);
+  }
+  .share-card .hint {
+    margin-top: var(--gap-2);
+    padding-top: var(--gap-2);
+    border-top: 1px dashed var(--line-soft);
+    font-size: 11.5px; color: var(--ink-soft);
+  }
+  .share-note {
+    margin-top: var(--gap-5);
+    padding: var(--gap-4);
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: var(--r-l);
+    font-size: 14px; line-height: 1.6;
+  }
+  .share-note strong { color: var(--mustard); }
+  .foot h3 {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: 22px; margin: 0 0 var(--gap-3);
+    color: var(--paper);
+  }
+  .foot p { font-size: 13px; line-height: 1.6; color: rgba(244,239,230,.75); margin: 0 0 var(--gap-3); }
+  .foot .label {
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--mustard); font-weight: 600; margin-bottom: var(--gap-2);
+  }
+  .foot ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  .foot ul li { padding: 4px 0; color: rgba(244,239,230,.85); }
+  .foot ul li::before { content: "→ "; color: var(--mustard); }
+
+  /* Print-friendly */
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <header class="hero">
+    <div class="hero-eyebrow"><span class="dot"></span> Appennino Bolognese · Estate 2026</div>
+    <h1>Dove andare a pranzo e <em>trascorrere il pomeriggio</em> in altura</h1>
+    <p class="hero-sub">
+      Dieci agriturismi, locande e ristoranti sopra i 500&nbsp;metri di quota, da
+      Casalecchio e Pianoro in su verso Monghidoro, Monterenzio, Castiglione dei
+      Pepoli e il confine con il Mugello. Tutti adatti a una giornata in compagnia:
+      cucina di territorio, spazi verdi, relax o camminate dopo il pasto.
+    </p>
+    <div class="hero-meta">
+      <div class="item"><span class="label">Location</span><span class="value">10</span></div>
+      <div class="item"><span class="label">Quota minima</span><span class="value">500 m</span></div>
+      <div class="item"><span class="label">Quota massima</span><span class="value">~900 m</span></div>
+      <div class="item"><span class="label">Distanza da Bologna</span><span class="value">25–60 km</span></div>
+      <div class="item"><span class="label">Ideale per</span><span class="value">Pranzo + Pomeriggio</span></div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       CARDS
+       ============================================================ -->
+  <section class="cards">
+
+    <!-- 1. La Cartiera dei Benandanti -->
+    <article class="card">
+      <div class="card-num"><span class="n">1</span> Monghidoro · 840 m</div>
+      <h2>La Cartiera dei Benandanti</h2>
+      <div class="where">Via Idice 13 · 40063 Monghidoro (BO)</div>
+      <div class="photos">
+        <img src="assets/01_la_cartiera_benandanti_1.jpeg" alt="Esterno La Cartiera dei Benandanti" loading="lazy">
+        <img src="assets/01_la_cartiera_benandanti_2.jpg" alt="Ambiente La Cartiera" loading="lazy">
+        <img src="assets/01_la_cartiera_benandanti_3.jpg" alt="Dettaglio La Cartiera" loading="lazy">
+      </div>
+      <p class="desc">Agriturismo biologico nato dal recupero di un'antica cartiera. Cucina di prodotti propri e aziende vicine, ampio spazio esterno per chiacchierare nel fresco dell'alta collina dopo il pasto.</p>
+      <div class="card-tags">
+        <span class="tag alt">Biologico</span>
+        <span class="tag">Cucina propria</span>
+        <span class="tag warm">Tardo pranzo</span>
+        <span class="tag">Spazi verdi</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> 840 m</div>
+        <div class="stat"><b>Specialità</b> Pasta fresca bio, carni locali</div>
+        <div class="stat"><b>Per il pomeriggio</b> Tavolino all'aperto e natura</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="https://www.facebook.com/lacartieradeibenandanti/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span class="lbl">Pagina Facebook</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=La+Cartiera+dei+Benandanti+Via+Idice+13+Monghidoro">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/2a/25/6f/img-20170806-144237-largejpg.jpg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span class="lbl">TripAdvisor</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- 2. Prato degli Angeli -->
+    <article class="card">
+      <div class="card-num"><span class="n">2</span> Monterenzio · 550 m</div>
+      <h2>Prato degli Angeli</h2>
+      <div class="where">Via Sassonero 2-4 · 40050 Monterenzio (BO)</div>
+      <div class="photos">
+        <img src="assets/02_prato_degli_angeli_1.jpg" alt="Facciata Prato degli Angeli" loading="lazy">
+        <img src="assets/02_prato_degli_angeli_2.jpg" alt="Braglie Prato degli Angeli" loading="lazy">
+        <img src="assets/02_prato_degli_angeli_3.jpg" alt="Pensatoio degli Angeli" loading="lazy">
+      </div>
+      <p class="desc">Agriturismo con centro benessere, spa e piscina immersa nel verde del Sassonero. La combinazione perfetta per chi vuole trasformare il pranzo in una vera giornata di relax totale in compagnia.</p>
+      <div class="card-tags">
+        <span class="tag alt">Spa &amp; benessere</span>
+        <span class="tag alt">Piscina</span>
+        <span class="tag warm">Giornata intera</span>
+        <span class="tag">Camere</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> ~550 m</div>
+        <div class="stat"><b>Specialità</b> Cucina del territorio, menù degustazione</div>
+        <div class="stat"><b>Per il pomeriggio</b> Spa, piscina, percorsi nel bosco</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="https://www.agriturismopratodegliangeli.it/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="lbl">Sito ufficiale</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Prato+degli+Angeli+Via+Sassonero+Monterenzio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- 3. Il Passeggere -->
+    <article class="card">
+      <div class="card-num"><span class="n">3</span> Bruscoli · 900 m</div>
+      <h2>Agriturismo Ristorante Il Passeggere</h2>
+      <div class="where">Via Bruscoli Passeggere 1439 · 50033 Firenzuola (FI)</div>
+      <div class="photos">
+        <img src="assets/03_il_passeggere_1.jpg" alt="Esterno Il Passeggere" loading="lazy">
+        <img src="assets/03_il_passeggere_2.jpg" alt="Sala Il Passeggere" loading="lazy">
+        <img src="assets/03_il_passeggere_3.jpg" alt="Tramonto sul ristorante" loading="lazy">
+      </div>
+      <p class="desc">Struttura immersa in faggete secolari, al confine tra l'Appennino bolognese e quello fiorentino. Atmosfera rustica e piatti di tradizione: ideale per chiudere il pranzo con una lunga camminata digestiva.</p>
+      <div class="card-tags">
+        <span class="tag">Trekking</span>
+        <span class="tag alt">Faggete</span>
+        <span class="tag warm">Camminate</span>
+        <span class="tag rust">Bosco</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> 900 m</div>
+        <div class="stat"><b>Specialità</b> Tortelli mugellani, tagliatelle al ragù bianco</div>
+        <div class="stat"><b>Per il pomeriggio</b> Sentieri segnalati nei boschi</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="https://www.agriturismo.it/it/agriturismi/toscana/firenze/IlPasseggere-6850245/index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="lbl">Scheda completa</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.facebook.com/100092877606158/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span class="lbl">Facebook</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Il+Passeggere+Via+Bruscoli+Passeggere+1439+Firenzuola">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- 4. Ca' De' Magnani -->
+    <article class="card">
+      <div class="card-num"><span class="n">4</span> Baragazza · 800 m</div>
+      <h2>Agriturismo Ca' De' Magnani</h2>
+      <div class="where">Baragazza · 40035 Castiglione dei Pepoli (BO)</div>
+      <div class="photos">
+        <img src="assets/04_ca_de_magnani_1.jpeg" alt="Esterno Ca' De' Magnani" loading="lazy">
+        <img src="assets/04_ca_de_magnani_2.jpg" alt="Struttura Ca' De' Magnani" loading="lazy">
+        <img src="assets/04_ca_de_magnani_3.jpg" alt="Cucina Ca' De' Magnani" loading="lazy">
+      </div>
+      <p class="desc">Casale a B&amp;B informale e accogliente con fattoria didattica. Ampi spazi verdi per stendersi al sole, animali da accarezzare, attività per bambini: esperienza rurale a tutto tondo.</p>
+      <div class="card-tags">
+        <span class="tag alt">Fattoria</span>
+        <span class="tag">B&amp;B</span>
+        <span class="tag warm">Famiglie</span>
+        <span class="tag">Prato</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> ~800 m</div>
+        <div class="stat"><b>Specialità</b> Cucina casalinga, torte fatte in casa</div>
+        <div class="stat"><b>Per il pomeriggio</b> Relax sul prato, animali, giochi</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="http://www.cademagnani.it/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="lbl">Sito ufficiale</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Agriturismo+Ca+De+Magnani+Baragazza+Castiglione+dei+Pepoli">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- 5. Locanda Il Mio Rifugio -->
+    <article class="card">
+      <div class="card-num"><span class="n">5</span> Gaggio Montano · 700 m</div>
+      <h2>Locanda Il Mio Rifugio</h2>
+      <div class="where">Gaggio Montano · Appennino bolognese-modenese</div>
+      <div class="photos">
+        <img src="assets/05_locanda_il_mio_rifugio_1.jpg" alt="Esterno Locanda Il Mio Rifugio" loading="lazy">
+        <img src="assets/05_locanda_il_mio_rifugio_2.jpg" alt="Sala ristorante" loading="lazy">
+        <img src="assets/05_locanda_il_mio_rifugio_3.jpg" alt="Piatti tipici" loading="lazy">
+      </div>
+      <p class="desc">Locanda con ristorante, centro benessere, piscina idromassaggio, sauna, bagno turco e terrazza solarium. La scelta "giornata lunga" per chi vuole davvero non muoversi fino a sera.</p>
+      <div class="card-tags">
+        <span class="tag alt">Spa</span>
+        <span class="tag alt">Piscina idromassaggio</span>
+        <span class="tag warm">Sauna</span>
+        <span class="tag">Bagno turco</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> ~700 m</div>
+        <div class="stat"><b>Specialità</b> Cucina montanara, selvaggina</div>
+        <div class="stat"><b>Per il pomeriggio</b> Spa, piscina, passeggiate nei boschi</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="https://www.agriturismi.it/it/emilia-romagna/gaggio_montano/locanda_il_mio_rifugio.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="lbl">Scheda</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.facebook.com/ilmiorifugio/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span class="lbl">Facebook</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Locanda+Il+Mio+Rifugio+Gaggio+Montano+Bologna">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- 6. Ca' del Buco -->
+    <article class="card">
+      <div class="card-num"><span class="n">6</span> Montepastore · 500 m</div>
+      <h2>Agriturismo Ca' del Buco</h2>
+      <div class="where">Montepastore · 40050 Monte San Pietro (BO)</div>
+      <div class="photos">
+        <img src="assets/06_ca_del_buco_1.jpg" alt="Ca' del Buco in estate" loading="lazy">
+        <img src="assets/06_ca_del_buco_2.jpg" alt="Attività fattoria" loading="lazy">
+        <img src="assets/06_ca_del_buco_3.jpg" alt="Castagne e marroni bio" loading="lazy">
+      </div>
+      <p class="desc">Fattoria didattica e azienda agricola biologica. Pasti genuini, prodotti propri (farina di marroni, castagne), animali e attività per gruppi e famiglie. Posto perfetto per stare insieme senza fretta.</p>
+      <div class="card-tags">
+        <span class="tag alt">Biologico</span>
+        <span class="tag">Fattoria didattica</span>
+        <span class="tag warm">Gruppi</span>
+        <span class="tag">Castagne</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> ~500 m</div>
+        <div class="stat"><b>Specialità</b> Frollini alla farina di marroni, prodotti bio</div>
+        <div class="stat"><b>Per il pomeriggio</b> Visita fattoria, animali, natura</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="https://www.cadelbuco.it/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="lbl">Sito ufficiale</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.cadelbuco.it/fotogallery.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span class="lbl">Gallery completa</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Agriturismo+Ca+del+Buco+Montepastore+Monte+San+Pietro">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- 7. Podere Caselina -->
+    <article class="card">
+      <div class="card-num"><span class="n">7</span> Lago Brasimone · 900 m</div>
+      <h2>Podere Caselina</h2>
+      <div class="where">Zona Lago Brasimone · Alto Appennino bolognese</div>
+      <div class="photos">
+        <img src="assets/07_podere_caselina_1.jpg" alt="Podere Caselina" loading="lazy">
+        <img src="assets/07_podere_caselina_2.jpg" alt="Agriturismo Podere Caselina" loading="lazy">
+        <img src="assets/07_podere_caselina_3.jpg" alt="Esterno nel bosco" loading="lazy">
+      </div>
+      <p class="desc">La quota più alta della lista. Contesto paesaggistico decisamente montano, con boschi, prati e vicinanza al Lago Brasimone. Ideale per chi cerca un pranzo "in quota" e un pomeriggio di silenzio e panorama.</p>
+      <div class="card-tags">
+        <span class="tag alt">Quota 900 m</span>
+        <span class="tag rust">Montagna</span>
+        <span class="tag warm">Lago</span>
+        <span class="tag">B&amp;B</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> ~900 m</div>
+        <div class="stat"><b>Specialità</b> Cucina casalinga di montagna</div>
+        <div class="stat"><b>Per il pomeriggio</b> Lago, boschi, silenzio</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="https://www.agribb.it/podere-caselina">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="lbl">Scheda</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Podere+Caselina+Lago+Brasimone+Bologna">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- 8. Antica Hostaria Rocca di Badolo -->
+    <article class="card">
+      <div class="card-num"><span class="n">8</span> Badolo · 500 m</div>
+      <h2>Antica Hostaria della Rocca di Badolo</h2>
+      <div class="where">Badolo · 40037 Sasso Marconi (BO)</div>
+      <div class="photos">
+        <img src="assets/08_antica_hostaria_rocca_badolo_1.jpg" alt="Antica Hostaria Rocca di Badolo" loading="lazy">
+        <img src="assets/08_antica_hostaria_rocca_badolo_2.jpg" alt="Ambiente ristorante" loading="lazy">
+        <img src="assets/08_antica_hostaria_rocca_badolo_3.jpg" alt="Piatti" loading="lazy">
+      </div>
+      <p class="desc">Ristorante panoramico con vista sull'Appennino, affacciato sulla rupe del Contrafforte Pliocenico. Atmosfera suggestiva e cucina curata: perfetto per un pranzo lungo e una sosta rilassata.</p>
+      <div class="card-tags">
+        <span class="tag alt">Panorama</span>
+        <span class="tag">Ristorante</span>
+        <span class="tag warm">Vista Appennino</span>
+        <span class="tag rust">Rupe</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> ~500 m</div>
+        <div class="stat"><b>Specialità</b> Cucina del Contrafforte, menù degustazione</div>
+        <div class="stat"><b>Per il pomeriggio</b> Terrazza, panorama, camminate al Contrafforte</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="https://www.anticahostaria.it/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="lbl">Sito ufficiale</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Antica+Hostaria+della+Rocca+di+Badolo+Sasso+Marconi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- 9. Fattoria Quercia -->
+    <article class="card">
+      <div class="card-num"><span class="n">9</span> Valsamoggia · 500 m</div>
+      <h2>Agriturismo Fattoria Quercia</h2>
+      <div class="where">Valsamoggia · Appennino bolognese</div>
+      <div class="photos">
+        <img src="assets/09_fattoria_quercia_1.jpg" alt="Fattoria Quercia" loading="lazy">
+        <img src="assets/09_fattoria_quercia_2.jpg" alt="Tavolo ristorante" loading="lazy">
+        <img src="assets/09_fattoria_quercia_3.jpg" alt="Famiglia e cucina" loading="lazy">
+      </div>
+      <p class="desc">Fattoria con cucina tradizionale e buon rapporto qualità/prezzo, rifugio rilassante per chi cerca una sosta senza pretese ma curata, con spazi per stare insieme anche a gruppi numerosi.</p>
+      <div class="card-tags">
+        <span class="tag">Fattoria</span>
+        <span class="tag warm">Tranquillità</span>
+        <span class="tag">Cucina di territorio</span>
+        <span class="tag alt">Gruppi</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> ~500 m</div>
+        <div class="stat"><b>Specialità</b> Pasta fatta in casa, salumi propri</div>
+        <div class="stat"><b>Per il pomeriggio</b> Spazi verdi, silenzio, relax</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="https://www.fattoriaquercia.it/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="lbl">Sito ufficiale</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Fattoria+Quercia+Valsamoggia+Bologna">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- 10. Il Granello -->
+    <article class="card">
+      <div class="card-num"><span class="n">10</span> Contrafforte Pliocenico · 500 m</div>
+      <h2>Il Granello</h2>
+      <div class="where">Riserva Naturale Contrafforte Pliocenico (BO)</div>
+      <div class="photos">
+        <img src="assets/10_il_granello_1.jpg" alt="Il Granello - cucina e relax" loading="lazy">
+        <img src="assets/10_il_granello_2.jpg" alt="Il Granello - glamping esterno" loading="lazy">
+        <img src="assets/10_il_granello_3.jpg" alt="Il Granello - panoramica" loading="lazy">
+      </div>
+      <p class="desc">Struttura piccola immersa nella Riserva del Contrafforte Pliocenico: pace assoluta, contatto con la natura, possibilità di soggiorno in formula glamping. Ideale per chi vuole staccare davvero.</p>
+      <div class="card-tags">
+        <span class="tag alt">Riserva naturale</span>
+        <span class="tag">Glamping</span>
+        <span class="tag warm">Silenzio</span>
+        <span class="tag rust">Natura protetta</span>
+      </div>
+      <div class="card-foot">
+        <div class="stat"><b>Quota</b> ~500 m</div>
+        <div class="stat"><b>Specialità</b> Cucina a chilometro zero</div>
+        <div class="stat"><b>Per il pomeriggio</b> Riserva, sentieri, totale tranquillità</div>
+      </div>
+      <div class="card-actions">
+        <a class="act primary" target="_blank" rel="noopener" href="https://www.ilgranello.it/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="lbl">Sito ufficiale</span>
+        </a>
+        <a class="act" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Il+Granello+Riserva+Contrafforte+Pliocenico+Bologna">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lbl">Mappa</span>
+        </a>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ============================================================
+       TABELLA RIASSUNTIVA
+       ============================================================ -->
+  <section class="table-section">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Tabella riassuntiva</div>
+        <h2>Le 10 location a colpo d'occhio</h2>
+      </div>
+      <p>Confronto rapido per scegliere in base a quota, specialità e tipo di pomeriggio che volete trascorrere.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:24%">Location</th>
+          <th style="width:14%">Località</th>
+          <th style="width:8%">Quota</th>
+          <th style="width:10%">Rating</th>
+          <th style="width:24%">Specialità</th>
+          <th style="width:20%">Pomeriggio ideale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name-cell"><strong>La Cartiera dei Benandanti</strong><span>Biologico, cucina propria</span></td>
+          <td>Monghidoro</td>
+          <td>840 m</td>
+          <td><span class="rating">4.7</span></td>
+          <td>Pasta fresca bio, carni locali</td>
+          <td><div class="alt-cell"><span class="mini-tag">Relax all'aperto</span><span class="mini-tag">Natura</span></div></td>
+        </tr>
+        <tr>
+          <td class="name-cell"><strong>Prato degli Angeli</strong><span>Spa, piscina, camere</span></td>
+          <td>Monterenzio</td>
+          <td>~550 m</td>
+          <td><span class="rating">4.6</span></td>
+          <td>Cucina del territorio, menù degustazione</td>
+          <td><div class="alt-cell"><span class="mini-tag alt">Spa</span><span class="mini-tag alt">Piscina</span><span class="mini-tag warm">Bosco</span></div></td>
+        </tr>
+        <tr>
+          <td class="name-cell"><strong>Il Passeggere</strong><span>Bosco, faggete, trekking</span></td>
+          <td>Bruscoli (FI)</td>
+          <td>900 m</td>
+          <td><span class="rating">4.7</span></td>
+          <td>Tortelli mugellani, tagliatelle al ragù bianco</td>
+          <td><div class="alt-cell"><span class="mini-tag">Trekking</span><span class="mini-tag rust">Faggete</span></div></td>
+        </tr>
+        <tr>
+          <td class="name-cell"><strong>Ca' De' Magnani</strong><span>Fattoria didattica, B&amp;B</span></td>
+          <td>Baragazza</td>
+          <td>~800 m</td>
+          <td><span class="rating">4.6</span></td>
+          <td>Cucina casalinga, torte fatte in casa</td>
+          <td><div class="alt-cell"><span class="mini-tag alt">Animali</span><span class="mini-tag warm">Famiglie</span><span class="mini-tag">Prato</span></div></td>
+        </tr>
+        <tr>
+          <td class="name-cell"><strong>Locanda Il Mio Rifugio</strong><span>Spa, piscina, sauna</span></td>
+          <td>Gaggio Montano</td>
+          <td>~700 m</td>
+          <td><span class="rating">4.6</span></td>
+          <td>Cucina montanara, selvaggina</td>
+          <td><div class="alt-cell"><span class="mini-tag alt">Spa</span><span class="mini-tag alt">Piscina</span><span class="mini-tag warm">Giornata intera</span></div></td>
+        </tr>
+        <tr>
+          <td class="name-cell"><strong>Ca' del Buco</strong><span>Biologico, castagne</span></td>
+          <td>Montepastore</td>
+          <td>~500 m</td>
+          <td><span class="rating">4.7</span></td>
+          <td>Frollini alla farina di marroni</td>
+          <td><div class="alt-cell"><span class="mini-tag alt">Fattoria</span><span class="mini-tag warm">Gruppi</span><span class="mini-tag">Natura</span></div></td>
+        </tr>
+        <tr>
+          <td class="name-cell"><strong>Podere Caselina</strong><span>Quota più alta</span></td>
+          <td>Lago Brasimone</td>
+          <td>~900 m</td>
+          <td><span class="rating">4.5</span></td>
+          <td>Cucina casalinga di montagna</td>
+          <td><div class="alt-cell"><span class="mini-tag rust">Montagna</span><span class="mini-tag warm">Lago</span><span class="mini-tag">Silenzio</span></div></td>
+        </tr>
+        <tr>
+          <td class="name-cell"><strong>Antica Hostaria Rocca di Badolo</strong><span>Panorama, rupe</span></td>
+          <td>Badolo</td>
+          <td>~500 m</td>
+          <td><span class="rating">4.4</span></td>
+          <td>Cucina del Contrafforte Pliocenico</td>
+          <td><div class="alt-cell"><span class="mini-tag alt">Panorama</span><span class="mini-tag">Terrazza</span><span class="mini-tag rust">Rupe</span></div></td>
+        </tr>
+        <tr>
+          <td class="name-cell"><strong>Fattoria Quercia</strong><span>Tranquillità, gruppi</span></td>
+          <td>Valsamoggia</td>
+          <td>~500 m</td>
+          <td><span class="rating">4.5</span></td>
+          <td>Pasta fatta in casa, salumi propri</td>
+          <td><div class="alt-cell"><span class="mini-tag alt">Relax</span><span class="mini-tag warm">Famiglia</span></div></td>
+        </tr>
+        <tr>
+          <td class="name-cell"><strong>Il Granello</strong><span>Riserva naturale, glamping</span></td>
+          <td>Contrafforte Pliocenico</td>
+          <td>~500 m</td>
+          <td><span class="rating">4.5</span></td>
+          <td>Cucina a chilometro zero</td>
+          <td><div class="alt-cell"><span class="mini-tag alt">Riserva</span><span class="mini-tag warm">Silenzio</span><span class="mini-tag">Sentieri</span></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============================================================
+       SEZIONE: Come condividere
+       ============================================================ -->
+  <section class="share">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Condividi la locandina</div>
+        <h2>3 modi per portarla con te</h2>
+      </div>
+      <p>La locandina è un singolo file HTML con la cartella <code>assets/</code>: le immagini sono già incorporate, non serve connessione per vederle.</p>
+    </div>
+
+    <div class="share-grid">
+      <div class="share-card">
+        <div class="share-num">A</div>
+        <h3>PDF per stampa o WhatsApp</h3>
+        <p>Apri <code>locandina.html</code> in Chrome/Edge → <kbd>Ctrl</kbd>+<kbd>P</kbd> → salva come PDF. Le immagini sono già incorporate, il file è pronto da inviare.</p>
+        <p class="hint">✅ Funziona offline · ✅ Ricevente non deve avere la cartella assets</p>
+      </div>
+      <div class="share-card">
+        <div class="share-num">B</div>
+        <h3>Google Drive (consigliato)</h3>
+        <p>Comprimi <code>locandina-agriturismi/</code> in un .zip, caricalo su Drive, poi converti in cartella condivisa. Chi apre <code>locandina.html</code> dal proprio Drive vedrà foto + link cliccabili.</p>
+        <p class="hint">✅ Foto visibili · ✅ Link funzionanti · ⚠️ Richiede Drive Desktop o download+apertura locale</p>
+      </div>
+      <div class="share-card">
+        <div class="share-num">C</div>
+        <h3>Hosting gratuito online</h3>
+        <p>Carica la cartella su <strong>Netlify Drop</strong> (drop.netlify.com), <strong>Vercel</strong>, o <strong>GitHub Pages</strong>: ti danno un link HTTPS condivisibile. Le immagini restano online e i link restano cliccabili da chiunque.</p>
+        <p class="hint">✅ Chiunque apre un link · ✅ Foto + link funzionanti · ⚠️ Serve upload iniziale</p>
+      </div>
+    </div>
+
+    <div class="share-note">
+      <strong>💡 Consiglio pratico:</strong> per la condivisione con amici, la via più rapida è
+      <strong>opzione B + anteprima PDF</strong>: zip + Drive + una foto PDF della locandina allegata su WhatsApp/Telegram,
+      così tutti vedono subito l'anteprima e chi vuole può aprire la versione interattiva.
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="foot">
+    <div>
+      <h3>Come scegliere</h3>
+      <p>Se volete una <strong>giornata completa</strong> con spa e piscina: <strong>Locanda Il Mio Rifugio</strong> o <strong>Prato degli Angeli</strong>.</p>
+      <p>Se volete <strong>trekking nei boschi</strong> dopo pranzo: <strong>Il Passeggere</strong> o <strong>Podere Caselina</strong>.</p>
+      <p>Se volete <strong>stare con bambini</strong> o in fattoria: <strong>Ca' De' Magnani</strong> o <strong>Ca' del Buco</strong>.</p>
+    </div>
+    <div>
+      <div class="label">Vicino Bologna</div>
+      <ul>
+        <li>Rocca di Badolo</li>
+        <li>Ca' del Buco</li>
+        <li>Il Granello</li>
+        <li>Fattoria Quercia</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Più in quota</div>
+      <ul>
+        <li>Podere Caselina 900 m</li>
+        <li>Il Passeggere 900 m</li>
+        <li>La Cartiera 840 m</li>
+        <li>Ca' De' Magnani 800 m</li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

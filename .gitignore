@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# File di lavoro
+anteprima.png
+brave_results.txt
+immagini_trovate.txt
+/tmp/
